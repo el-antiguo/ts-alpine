@@ -1,0 +1,128 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "folders",
+    "eslint-plugin-import"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "globals": {
+    "window": true
+  },
+  "rules": {
+    "semi": ["error", "never"],
+    "no-trailing-spaces": ["error", {"skipBlankLines": false}],
+    "arrow-body-style": ["error", "as-needed"],
+    "arrow-spacing": ["warn", {"before": true, "after": true}],
+    "complexity": ["error", 8],
+    "brace-style": ["error", "1tbs", {"allowSingleLine": true}],
+    "array-bracket-newline": ["error", {"multiline": true, "minItems": 4}],
+    "array-bracket-spacing": ["error", "always", {"objectsInArrays": true, "arraysInArrays": true}],
+    "array-element-newline": ["error", {"multiline": true, "minItems": 4}],
+    "block-spacing": ["error", "always"],
+    "object-curly-spacing": ["error", "always"],
+    "no-duplicate-imports": ["error", { "includeExports": true }],
+    "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
+    "space-before-blocks": ["error", { "functions": "always", "keywords": "always", "classes": "always" }],
+    "padded-blocks": ["error", "never"],
+    "no-console": ["error"],
+    "yoda": ["error", "always", { "onlyEquality": true }],
+    "eol-last": ["error", "always"],
+    "indent": ["error", 4, {"SwitchCase": 1}],
+    "no-whitespace-before-property": ["error"],
+    "no-multi-spaces": ["error"],
+    "no-multiple-empty-lines": ["error"],
+    "no-return-await": "error",
+    "space-in-parens": ["error", "never"],
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "tabWidth": 4,
+        "comments": 120,
+        "ignoreComments": false,
+        "ignoreTrailingComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+      }
+    ],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": ["default"],
+        "format": ["camelCase"],
+        "leadingUnderscore": "forbid",
+        "trailingUnderscore": "forbid"
+      },
+      {
+        "selector": ["enum", "class", "interface"],
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": ["typeAlias"],
+        "format": ["PascalCase", "camelCase"]
+      },
+      {
+        "selector": ["objectLiteralProperty"],
+        "format": ["snake_case", "camelCase", "UPPER_CASE"]
+      },
+      {
+        "selector": ["property"],
+        "modifiers": ["static", "readonly"],
+        "format": ["UPPER_CASE"]
+      },
+      {
+        "selector": ["typeParameter"],
+        "format": ["UPPER_CASE"]
+      },
+      {
+        "selector": ["enumMember"],
+        "format": ["UPPER_CASE"]
+      },
+      {
+        "selector": ["variable", "method", "property"],
+        "format": ["camelCase"],
+        "modifiers": ["protected", "private"],
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": ["functions"],
+        "format": ["PascalCase"]
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": ["off"],
+    "@typescript-eslint/quotes": ["error", "single", {"allowTemplateLiterals": true, "avoidEscape": true}],
+    "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
+    "@typescript-eslint/comma-spacing": ["error", {"after": true}],
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/explicit-member-accessibility": ["error"],
+    "folders/match-regex": ["error", "^[a-z]+((\\d)|([A-Z0-9][a-z0-9]+))*([A-Z])?$", "/src/"],
+    "import/no-internal-modules": ["error", {
+      "allow": [
+        "config/*",
+        "typeorm/util/StringUtils",
+        "jayson/promise",
+        "src/core",
+        "src/app",
+        "src/utils",
+        "@crypto-org-chain/chain-jslib/lib/dist/network/network",
+        "@crypto-org-chain/chain-jslib/lib/dist/utils/txDecoder"
+      ]
+    }]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".js", ".mjs", ".d.ts"]
+      }
+    }
+  },
+  "root": true
+}
