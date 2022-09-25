@@ -1,0 +1,9 @@
+{
+  "directory": [
+    "./src"
+  ],
+  "location": "all",
+  "delete": true,
+  "singleQuotes": true,
+  "noSemicolon": true
+}
