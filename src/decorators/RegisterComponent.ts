@@ -1,10 +1,10 @@
 import { ComponentInterface } from '../types'
 
-export function RegisterComponent() {
+export function RegisterComponent(...arg: any[]) {
     return function (target: any) {
         const className: string = target.name
 
-        window[className] = function (attributes: {[key:string]:any}, ...arg: any[]) {
+        window[className] = function (attributes: {[key:string]:any}) {
             const instance = new target(...arg)
 
             setAttributes(instance, attributes)
