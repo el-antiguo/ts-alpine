@@ -7,20 +7,20 @@ export function RegisterComponent(...arg: any[]) {
         window[className] = function (attributes: {[key:string]:any}) {
             const instance = new target(...arg)
 
-            setAttributes(instance, attributes)
-            injectInitMethod(instance)
-            exposeMethods(instance)
+            SetAttributes(instance, attributes)
+            InjectInitMethod(instance)
+            ExposeMethods(instance)
 
             return instance
         }
     }
 }
 
-function setAttributes(instance: ComponentInterface, attributes: {[key:string]:any}): void {
+function SetAttributes(instance: ComponentInterface, attributes: {[key:string]:any}): void {
     Object.assign(instance, attributes)
 }
 
-function injectInitMethod(instance: ComponentInterface) {
+function InjectInitMethod(instance: ComponentInterface) {
     const oldInit = instance.init
 
     Object.defineProperty(instance, 'init', {
@@ -31,12 +31,12 @@ function injectInitMethod(instance: ComponentInterface) {
             self.$eventListeners?.(this)
 
             oldInit?.()
-        }
+        },
     })
 }
 
-function exposeMethods(instance: any) {
-    const excludeMethods = ['constructor', 'init']
+function ExposeMethods(instance: any) {
+    const excludeMethods = [ 'constructor', 'init' ]
     const methods = Reflect.ownKeys(Object.getPrototypeOf(instance))
         .filter((key: any) => !key.startsWith('$')
             && !excludeMethods.includes(key)
@@ -45,5 +45,5 @@ function exposeMethods(instance: any) {
         Object.defineProperty(instance, key, {
             value: instance[key],
         })
-    });
+    })
 }

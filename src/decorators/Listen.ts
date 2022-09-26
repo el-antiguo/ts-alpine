@@ -6,9 +6,9 @@ export function Listen(listen: string) {
             value: function(self:any) {
                 oldMethod?.(self)
 
-                self.$el.addEventListener(listen, (event: any) => self[watched](event));
+                self.$el.addEventListener(listen, (event: any) => self[watched](event))
             },
-            configurable: true
+            configurable: true,
         })
     }
 }

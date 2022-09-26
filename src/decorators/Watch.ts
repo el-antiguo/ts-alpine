@@ -8,7 +8,7 @@ export function Watch(fire: any) {
 
                 self.$watch(watched, (value: any) => self[fire](value))
             },
-            configurable: true
+            configurable: true,
         })
     }
 }
