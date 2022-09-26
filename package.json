@@ -1,6 +1,6 @@
 {
   "name": "ts-alpine",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "a simple implementation and component registration for Alpine.js using typescript",
   "main": "dist/index.js",
   "repository": "https://github.com/el-antiguo/ts-alpine.git",
