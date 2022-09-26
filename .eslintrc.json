@@ -92,7 +92,7 @@
         "leadingUnderscore": "allow"
       },
       {
-        "selector": ["functions"],
+        "selector": ["function"],
         "format": ["PascalCase"]
       }
     ],
